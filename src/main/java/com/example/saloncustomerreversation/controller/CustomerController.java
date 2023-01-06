@@ -1,22 +1,26 @@
 package com.example.saloncustomerreversation.controller;
 
-import com.example.saloncustomerreversation.service.CustomerService;
-import org.springframework.stereotype.Controller;
+import com.example.saloncustomerreversation.data.Customer;
+import com.example.saloncustomerreversation.data.CustomerRepository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/v1/")
 public class CustomerController {
-    private CustomerService customerService;
+    private CustomerRepository customerRepository;
 
-    public CustomerController(CustomerService customerService) {
+    public CustomerController(CustomerRepository customerRepository) {
         super();
-        this.customerService = customerService;
+        this.customerRepository = customerRepository;
     }
 
     @GetMapping("/customers")
-    public String listCustomers(Model model) {
-        model.addAttribute("customers", customerService.getAllCustomers());
-        return "customers";
+    public List<Customer> getAllCustomers() {
+        return customerRepository.findAll();
     }
 }
