@@ -6,11 +6,10 @@ import jakarta.persistence.*;
 @Table(name="CUSTOMER")
 public class Customer {
     @Id
-    @Column(name="CUSTOMER_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long customerId;
 
-    @Column(name="FIRST_NAME", nullable = false)
+    @Column(name="FIRST_NAME")
     private String firstName;
 
     @Column(name="LAST_NAME")

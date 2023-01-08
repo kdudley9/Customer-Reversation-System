@@ -2,7 +2,7 @@ package com.example.saloncustomerreversation.controller;
 
 import com.example.saloncustomerreversation.data.Customer;
 import com.example.saloncustomerreversation.data.CustomerRepository;
-import org.springframework.ui.Model;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +14,7 @@ import java.util.List;
 public class CustomerController {
     private CustomerRepository customerRepository;
 
+    @Autowired
     public CustomerController(CustomerRepository customerRepository) {
         super();
         this.customerRepository = customerRepository;
