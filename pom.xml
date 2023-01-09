@@ -11,8 +11,8 @@
     <groupId>com.example</groupId>
     <artifactId>Salon-Customer-Reversation</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Salon-Customer-Reversation</name>
-    <description>Salon-Customer-Reversation</description>
+    <name>Customer-Reservation-Service</name>
+    <description>Customer-Reservation-Service</description>
     <properties>
         <java.version>17</java.version>
     </properties>

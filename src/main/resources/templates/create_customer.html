@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Reservation Service</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Customer Reservation Service</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/customers}">Customer Reservation Home</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br>
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-lg-6 col-md-6 col-sm-6 container justify-content-center card"></div>
+                <h1 class = "text-center"> Add Customer </h1>
+                <div class = "card-body">
+                    <form th:action="@{/customers}" th:object = "${customer}" method="POST">
+                        <div class = "form-group">
+                            <label> Customer First Name </label>
+                            <input
+                            type = "text"
+                            name = "firstName"
+                            th:field = "*{firstName}"
+                            class = "form-control"
+                            placeholder = "Enter Customer's First Name"
+                            />
+                        </div>
+
+                        <div class = "form-group">
+                            <label> Customer Last Name </label>
+                            <input
+                            type = "text"
+                            name = "lastName"
+                            th:field = "*{lastName}"
+                            class = "form-control"
+                            placeholder = "Enter Customer's Last Name"
+                            />
+                        </div>
+
+                        <div class = "form-group">
+                            <label> Customer Email </label>
+                            <input
+                            type = "text"
+                            name = "emailAddress"
+                            th:field = "*{emailAddress}"
+                            class = "form-control"
+                            placeholder = "Enter Customer's Email"
+                            />
+                        </div>
+
+                        <div class = "form-group">
+                            <label> Customer Phone Number </label>
+                            <input
+                            type = "text"
+                            name = "phoneNumber"
+                            th:field = "*{phoneNumber}"
+                            class = "form-control"
+                            placeholder = "Enter Customer's Phone Number"
+                            />
+                        </div>
+
+                        <div class = "box-footer">
+                            <button type="submit" class = "btn btn-primary">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+        </div>
+    </div>
+</body>
+</html>
