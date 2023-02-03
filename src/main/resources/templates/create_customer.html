@@ -28,63 +28,48 @@
 </nav>
 <br>
     <div class = "container">
-        <div class = "row">
-            <div class = "col-lg-6 col-md-6 col-sm-6 container justify-content-center card"></div>
-                <h1 class = "text-center"> Add Customer </h1>
-                <div class = "card-body">
-                    <form th:action="@{/customers}" th:object = "${customer}" method="POST">
-                        <div class = "form-group">
-                            <label> Customer First Name </label>
-                            <input
-                            type = "text"
-                            name = "firstName"
-                            th:field = "*{firstName}"
-                            class = "form-control"
-                            placeholder = "Enter Customer's First Name"
-                            />
-                        </div>
+        <h1> Add Customer </h1>
+        <form th:action="@{/customers}" th:object = "${customer}" method="POST">
+            <label> Customer First Name </label>
+            <input
+                    type = "text"
+                    name = "firstName"
+                    th:field = "*{firstName}"
+                    class = "form-control col-6 mb-6"
+                    placeholder = "Enter Customer's First Name"
+            />
 
-                        <div class = "form-group">
-                            <label> Customer Last Name </label>
-                            <input
-                            type = "text"
-                            name = "lastName"
-                            th:field = "*{lastName}"
-                            class = "form-control"
-                            placeholder = "Enter Customer's Last Name"
-                            />
-                        </div>
+            <label> Customer Last Name </label>
+            <input
+                    type = "text"
+                    name = "lastName"
+                    th:field = "*{lastName}"
+                    class = "form-control col-6 mb-6"
+                    placeholder = "Enter Customer's Last Name"
+            />
 
-                        <div class = "form-group">
-                            <label> Customer Email </label>
-                            <input
-                            type = "text"
-                            name = "emailAddress"
-                            th:field = "*{emailAddress}"
-                            class = "form-control"
-                            placeholder = "Enter Customer's Email"
-                            />
-                        </div>
 
-                        <div class = "form-group">
-                            <label> Customer Phone Number </label>
-                            <input
-                            type = "text"
-                            name = "phoneNumber"
-                            th:field = "*{phoneNumber}"
-                            class = "form-control"
-                            placeholder = "Enter Customer's Phone Number"
-                            />
-                        </div>
+            <label> Customer Email </label>
+            <input
+                    type = "text"
+                    name = "emailAddress"
+                    th:field = "*{emailAddress}"
+                    class = "form-control col-6 mb-6"
+                    placeholder = "Enter Customer's Email"
+            />
 
-                        <div class = "box-footer">
-                            <button type="submit" class = "btn btn-primary">
-                                Submit
-                            </button>
-                        </div>
-                    </form>
-                </div>
-        </div>
+            <label> Customer Phone Number </label>
+            <input
+                    type = "text"
+                    name = "phoneNumber"
+                    th:field = "*{phoneNumber}"
+                    class = "form-control col-6 mb-6"
+                    placeholder = "Enter Customer's Phone Number"
+            />
+            <button type="submit" class = "btn btn-primary">
+                Submit
+            </button>
+        </form>
     </div>
 </body>
 </html>
